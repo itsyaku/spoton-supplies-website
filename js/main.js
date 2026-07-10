@@ -78,6 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach((el) => cio.observe(el));
   }
 
+  // Hero background slideshow (cross-fade)
+  const slides = document.querySelectorAll(".hero-slide");
+  if (slides.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove("active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("active");
+    }, 6000);
+  }
+
   // Contact form -> opens the user's email client with a pre-filled message
   const form = document.getElementById("contact-form");
   if (form) {
