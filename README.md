@@ -4,6 +4,23 @@ Modern, static rebuild of https://www.spotonsupplies.co.za/ (originally a Wix si
 No frameworks or build step — plain HTML/CSS/JS. Host it anywhere (Netlify, Vercel,
 Cloudflare Pages, cPanel, GitHub Pages).
 
+**Repo:** https://github.com/itsyaku/spoton-supplies-website
+
+## Deployment (Vercel)
+
+The repo is configured for Vercel (`vercel.json` enables clean URLs). To deploy:
+
+1. Go to https://vercel.com/new and sign in with GitHub (account `itsyaku`).
+2. Install/authorize the Vercel GitHub App for the `spoton-supplies-website` repo.
+3. **Import** the repo. Leave all build settings at their defaults — it's a static
+   site: Framework Preset **Other**, no build command, output directory blank,
+   root directory `./`.
+4. Click **Deploy**. You get a `*.vercel.app` URL in ~30 seconds.
+
+After the first import, **every `git push` to `main` auto-deploys**. To use the real
+domain, add `spotonsupplies.co.za` under the project's Settings → Domains and update
+the DNS records Vercel shows.
+
 ## Pages
 
 | File | Purpose |
